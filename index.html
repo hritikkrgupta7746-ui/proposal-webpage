@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story — A Cinematic Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="global-effects-canvas"></canvas>
+    
+    <div id="magic-cursor-glow"></div>
+    <div id="magic-cursor-dot"></div>
+
+    <div id="floating-audio-dock" class="glassmorphic-dock">
+        <button id="audio-toggle-btn" aria-label="Toggle Cinematic Soundtrack">
+            <span class="icon-play">🎵</span>
+            <span class="track-title">Cinematic Romance</span>
+        </button>
+        <div class="audio-waves">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div id="cinematic-loader">
+        <div class="loader-content">
+            <h2 class="cinzel-font">Preparing Something Magical</h2>
+            <div class="progress-bar-container">
+                <div id="loader-progress"></div>
+            </div>
+            <p id="loader-status-text">Weaving memories, stars, and heartbeats...</p>
+        </div>
+    </div>
+
+    <main id="storytelling-app">
+
+        <section id="hero-sequence" class="story-view active">
+            <div class="aurora-backdrop"></div>
+            <div class="glass-card element-3d-tilt" id="hero-card">
+                <h1 class="cinzel-font dynamic-glow-text" id="typing-hero-target"></h1>
+                <p class="inter-font">An interactive exploration of moments that changed a universe forever.</p>
+                <button class="luxury-btn btn-pulse" onclick="engine.nextSequence()">Open My Heart</button>
+            </div>
+        </section>
+
+        <section id="envelope-sequence" class="story-view hidden-view">
+            <div class="envelope-wrapper">
+                <div class="envelope" id="interactive-envelope" onclick="engine.openEnvelope()">
+                    <div class="flap top-flap"></div>
+                    <div class="flap side-flap left-side"></div>
+                    <div class="flap side-flap right-side"></div>
+                    <div class="letter-preview">
+                        <span class="seal">❤️</span>
+                    </div>
+                </div>
+                <div class="unfolded-letter-modal glass" id="unfolded-letter">
+                    <h2 class="handwritten-font">My Dearest,</h2>
+                    <p class="handwritten-font delayed-ink-draw">
+                        From the exact second you stepped into my reality, the gravity of everything altered. I spent lifetimes trying to map out a path to find a soul like yours. This is my complete confession... Written in ink, bound in stars.
+                    </p>
+                    <button class="luxury-btn" onclick="engine.nextSequence()">Walk Through Our Story →</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline-sequence" class="story-view hidden-view">
+            <div class="scroll-container-axis">
+                <h2 class="cinzel-font center-title">Our Celestial Milestones</h2>
+                <div class="timeline-line-track">
+                    <div class="timeline-progress-fill"></div>
+                </div>
+                
+                <div class="timeline-nodes-wrapper">
+                    <div class="timeline-card glass node-left">
+                        <span class="node-icon">🌹</span>
+                        <h3>First Time We Met</h3>
+                        <p>The universe stood perfectly still. Time lost its linear meaning completely.</p>
+                    </div>
+                    <div class="timeline-card glass node-right">
+                        <span class="node-icon">😊</span>
+                        <h3>First Conversation</h3>
+                        <p>Words flowed like poetry. Two minds echoing an eternal cosmic wavelength.</p>
+                    </div>
+                    <div class="timeline-card glass node-left">
+                        <span class="node-icon">❤️</span>
+                        <h3>First Smile</h3>
+                        <p>A sudden supernova of pure light that instantly rewrote my entire dark sky.</p>
+                    </div>
+                </div>
+                <button class="luxury-btn" onclick="engine.nextSequence()">Look Closer into My Soul</button>
+            </div>
+        </section>
+
+        <section id="traits-sequence" class="story-view hidden-view">
+            <h2 class="cinzel-font center-title">Why You Alter My Core Chemistry</h2>
+            <div class="traits-matrix-grid">
+                <div class="trait-card interactive-tilt-node">
+                    <div class="card-glow-overlay"></div>
+                    <span class="trait-emoji">😊</span>
+                    <h3>Your Smile</h3>
+                    <p>Defies standard physics; instantly radiating warmth across any distance.</p>
+                </div>
+                <div class="trait-card interactive-tilt-node">
+                    <div class="card-glow-overlay"></div>
+                    <span class="trait-emoji">🌸</span>
+                    <h3>Your Kindness</h3>
+                    <p>A soft, healing gravity that naturally mends everything it encounters.</p>
+                </div>
+                <div class="trait-card interactive-tilt-node">
+                    <div class="card-glow-overlay"></div>
+                    <span class="trait-emoji">✨</span>
+                    <h3>Your Personality</h3>
+                    <p>A rare mixture of starlight, laughter, and depth that leaves me completely mesmerized.</p>
+                </div>
+            </div>
+            
+            <div id="chibi-character-container">
+                <div class="chibi-sprite" id="original-chibi">
+                    <div class="chibi-head">
+                        <div class="chibi-blush"></div>
+                        <div class="chibi-eyes-happy"><span></span><span></span></div>
+                    </div>
+                    <div class="chibi-body"></div>
+                    <div class="chibi-hand-extended">
+                        <span class="gifted-flower">🌹</span>
+                    </div>
+                </div>
+                <div id="chibi-speech-bubble" class="glass">For the most beautiful soul... 🥺👉👈</div>
+            </div>
+
+            <button class="luxury-btn" onclick="engine.nextSequence()">View Our Timeless Artifacts</button>
+        </section>
+
+        <section id="gallery-counter-sequence" class="story-view hidden-view">
+            <div class="split-view-container">
+                
+                <div class="counter-panel glass">
+                    <h3 class="cinzel-font">Time Spent in Your Orbit</h3>
+                    <div id="digital-clock-matrix">
+                        <div class="matrix-unit"><span id="days-val" class="matrix-num">00</span><span class="matrix-lbl">Days</span></div>
+                        <div class="matrix-unit"><span id="hours-val" class="matrix-num">00</span><span class="matrix-lbl">Hours</span></div>
+                        <div class="matrix-unit"><span id="mins-val" class="matrix-num">00</span><span class="matrix-lbl">Mins</span></div>
+                        <div class="matrix-unit"><span id="secs-val" class="matrix-num">00</span><span class="matrix-lbl">Secs</span></div>
+                    </div>
+                </div>
+
+                <div class="masonry-gallery-grid">
+                    <div class="gallery-item-wrapper" onclick="engine.triggerLightbox('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600')">
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600" alt="Memory One" loading="lazy">
+                        <div class="gallery-hover-overlay"><span>Enlarge Moment 🔍</span></div>
+                    </div>
+                    <div class="gallery-item-wrapper" onclick="engine.triggerLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600')">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Memory Two" loading="lazy">
+                        <div class="gallery-hover-overlay"><span>Enlarge Moment 🔍</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cosmic-secret-star" onclick="engine.discoverSecret()" aria-label="Secret Object">✨</div>
+
+            <button class="luxury-btn" onclick="engine.nextSequence()">Step Into My Destiny</button>
+        </section>
+
+        <section id="proposal-sequence" class="story-view hidden-view">
+            <div id="buildup-darkness-curtain">
+                <div id="buildup-text-prompter" class="cinzel-font"></div>
+                <div id="heartbeat-graphic-node">❤️</div>
+            </div>
+
+            <div id="massive-proposal-stage" class="hidden-view">
+                <h2 class="cinzel-font proposal-title-glow">WILL YOU BE MY GIRLFRIEND?</h2>
+                <p class="inter-font prompt-subtitle">Bound by starlight, written across timelines. Choose our path below:</p>
+                
+                <div class="proposal-action-dock">
+                    <button id="yes-primary" class="proposal-action-btn luxury-btn-yes" onclick="engine.celebrateYes()">YES ❤️</button>
+                    <button id="yes-absolute" class="proposal-action-btn luxury-btn-yes" onclick="engine.celebrateYes()">ABSOLUTELY YES 💍</button>
+                    <button id="no-fleeing-target" class="proposal-action-btn" onmouseover="engine.fleeNoButton()" onclick="engine.clickNoAttempt()">NO 😢</button>
+                </div>
+                <div id="no-convince-toast"></div>
+            </div>
+        </section>
+
+        <section id="celebration-screen" class="story-view hidden-view">
+            <div class="celebration-shield-backdrop"></div>
+            <div class="glass-card matrix-modal-card">
+                <h2 class="great-vibes-font final-heading">You Just Made Me The Happiest Person ❤️</h2>
+                <p class="inter-font final-p">Our timeline is now locked forever into infinite happiness. Thank you for being the main chapter of my story.</p>
+                <div class="moonlight-glow-source"></div>
+                <span class="stardust-signature-line-text">Forever & Always Yours.</span>
+            </div>
+        </section>
+
+    </main>
+
+    <audio id="cinematic-audio-element" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
